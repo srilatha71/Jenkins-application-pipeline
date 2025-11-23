@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "Checking out the repository..."
-                git branch: 'main', url: 'https://github.com/srilatha71/Jenkins-application-pipeline.git'
+                git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
             }
         }
 
@@ -15,9 +15,9 @@ pipeline {
                 sh 'ls -ltr'
 
                 /* Build the project and create a JAR file */
-                sh '''
+                sh 'ls-ltr'
                     cd java-maven-sonar
-                    mvn clean package
+                sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
                 '''
             }
         }
